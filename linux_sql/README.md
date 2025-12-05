@@ -94,7 +94,6 @@ crontab -e
 ```
 
 ## Database Modeling
-## Database Modeling
 
 ### host_info
 
