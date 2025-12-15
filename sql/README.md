@@ -1,6 +1,7 @@
 
 
 # Introduction
+During this project, I initialized an SQL container using docker then initialized a database from a given SQL file. I then proceeded to write out all the necessary queries required in order to have all sorts of usefull information extracted properly from the database. These queries includes simple ones such as Insert, Update and Delete statement sample queries for the future along with more other queries ones such as various searches utilizing table joins and string concatenations. All teh queries are stored within the queries.sql for future use and reference. 
 
 # SQL Queries
 
