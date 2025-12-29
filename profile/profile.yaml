@@ -1,7 +1,7 @@
 # Preferred name (Characters only)
 name: "Jason Sastra"
 # Your GitHub repo root URL
-github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_demo
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_JasonSastra
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
@@ -90,13 +90,13 @@ professional_experience:
     description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
 
 #List of edcuation
-education: 
+education:
   - school_name: "XYZ university"
     duration: "2012-2016"
     degree: "Bachelor of Applied Sciences"
     department: "Electrical and Computer Engineering"
     # optional
-    awards_achievements: 
+    awards_achievements:
       - "Scholarship"
       - "Dean's List (2015, 2016): Ut enim ad minim veniam"
       - "GPA: 3.8/4.0"
@@ -104,7 +104,7 @@ education:
     duration: "2016-2018"
     degree: "Master of Engineering"
     department: "Electrical and Computer Engineering"
-    awards_achievements: 
+    awards_achievements:
 
 #Optional section
 others:

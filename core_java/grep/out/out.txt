@@ -1,0 +1,4 @@
+data\txt\shakespeare.txt:97884:    Is father, mother, Tybalt, Romeo, Juliet,
+data\txt\shakespeare.txt:98158:Enter Romeo and Juliet aloft, at the Window.
+data\txt\shakespeare.txt:99334:    And Romeo dead; and Juliet, dead before,
+data\txt\shakespeare.txt:99372:    Romeo, there dead, was husband to that Juliet;
