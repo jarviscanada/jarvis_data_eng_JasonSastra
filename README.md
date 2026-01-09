@@ -1,64 +1,43 @@
 # Jason Sastra . Jarvis Consulting
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit.
+I'm a graduate from the University of Toronto with a strong foundation in full-stack development, game programming, and data analysis. With experience across public and private sectors, and a portfolio of both technical and creative work, I’m eager to bring my skills and adaptability to a dynamic software or game development team.
 
 ## Skills
 
-**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git
+**Proficient:** Java, Python, RDBMS/SQL, C#, C++, Agile/Scrum, Git, React.js, Power BI
 
-**Competent:** Donec, fermentum, Donec, fermentum, Donec
+**Competent:** Linux/Bash, Docker, IntelliJ, Pandas, Numpy, Node.js
 
-**Familiar:** Donec, fermentum, fermentum, fermentum, fermentum
+**Familiar:** Assembly, JavaFx, Kubernetes, DBeaver, QA
 
 ## Jarvis Projects
 
-Project source code: [https://github.com/jarviscanada/jarvis_data_eng_demo](https://github.com/jarviscanada/jarvis_data_eng_demo)
+Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JasonSastra](https://github.com/jarviscanada/jarvis_data_eng_JasonSastra)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/linux_sql)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JasonSastra/tree/master/linux_sql)]: This project is monitoring agent for the performance and CPU usage of various different docker applications. For setup, it uses an SQL docker image to ensure SQL database could run properly. It also uses a volume to allow for continous usage and multiple applications running. For implementation, It uses LINUX bash commands in order to obtain various statistics such as CPU usage and memory usage and periodically store them. Finally, crontab is used in order to automate the check. This project is created for users that wants to keep track of the usages of their various linux products and monitor them such that they can take action if it is underperforming or overperforming.
 
-**Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/core_java)]:
-      
-  - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-
-**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/springboot)]: Not Started
-
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/python_data_anlytics)]: Not Started
-
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/hadoop)]: Not Started
-
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/spark)]: Not Started
-
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/cloud_devops)]: Not Started
+**Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JasonSastra/tree/master/core_java)]: Grep App: An application that allows for the use of the grep command in Linux by utilizing Java Files Objects along with Java Input and Output Stream. It takes in a file directory and a string then searches for it on all the files for a REGEX match then output it into an output file. The project itself is managed using Maven in order to manage its dependencies and uses SLFJ4 Logging in order to keep track of errors. It runs by taking in its parameters as command arguments.
 
 
 ## Highlighted Projects
-**Web app for resturant** [[GitHub](https://github.com/jarviscanada/jarvis_profile_builder)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Into The Dataswarm** [[GitHub](https://github.com/pokemonball34/tactical-x)]: Developed a tactical, turn-based game with a modifable enemy AI system that dynamically changes behavior to create engaging puzzle-solving challenges. Collaborated with a group of team until early launch on steam. •Built a modular level generator and flexible enemy patrol system, enabling seamless customization and scalability across multiple stages.
 
-**Machine Learning**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Restify**: Built an AirBnB-style website for managing reservations, bookings, property listings, and user-host interactions. with a Django Backend integrated with a React Front End. The app has a responsive design that adapts seamlessly to various devices, delivering an optimized experience on both mobile and desktop.
 
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Software Developer, Jarvis (2025/10 - present)**: Part of Jarvis Incubation Talent Program. Developed various Applications in Python, Java, SQL and developed in various environments including Linux, Docker and Windows as part of the training program. Integrated important technical requirements such as test driven coding in these implementations as experience. 
 
-**Tutor, XYZ Company (2019)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Office of The Governing Council, University of Toronto (2023/09 - 2025/09)**: At the Office of the Governing Council, I managed Google Tag Manager and Google Analytics 4 to track and analyze user interactions on an internal Drupal website. I integrated GA4 data with Power BI to develop an automated, bimonthly website analytics report, and conducted Drupal testing to identify and document bugs, improving stability and user experience. Additionally, I diagnosed and resolved issues with the MERN-based OGC calendar application.
 
 
 ## Education
-**XYZ university (2012-2016)**, Bachelor of Applied Sciences, Electrical and Computer Engineering
-- Scholarship
-- Dean's List (2015, 2016): Ut enim ad minim veniam
-- GPA: 3.8/4.0
-
-**XYZ university (2016-2018)**, Master of Engineering, Electrical and Computer Engineering
+**University of Toronto (2020-2025)**, Bachelor of Arts and Science, Computer Science Specialist, Computer Science
+- 3.4 GPA
 
 
 ## Miscellaneous
-- Udacity Machine Learning (2019)
-- Winner
 - Basketball player
 - Competitive gaming
-- Volunteer, ABC Food bank: Ut enim ad minim veniam

@@ -42,12 +42,10 @@ jarvis_projects:
     git_url: "/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description:
-      - "This project is monitoring agent for the performance and CPU usage of various different docker applications. For setup, it uses an SQL docker image to ensure SQL database could run properly. It also uses a volume to allow for continous usage and multiple applications running. For implementation, It uses LINUX bash commands in order to obtain various statistics such as CPU usage and memory usage and periodically store them. Finally, crontab is used in order to automate the check. This project is created for users that wants to keep track of the usages of their various linux products and monitor them such that they can take action if it is underperforming or overperforming."
+    description: "This project is monitoring agent for the performance and CPU usage of various different docker applications. For setup, it uses an SQL docker image to ensure SQL database could run properly. It also uses a volume to allow for continous usage and multiple applications running. For implementation, It uses LINUX bash commands in order to obtain various statistics such as CPU usage and memory usage and periodically store them. Finally, crontab is used in order to automate the check. This project is created for users that wants to keep track of the usages of their various linux products and monitor them such that they can take action if it is underperforming or overperforming."
   - name: "Core Java Apps"
     git_url: "/core_java"
-    description:
-      - "Grep App: An application that allows for the use of the grep command in Linux by utilizing Java Files Objects along with Java Input and Output Stream. It takes in a file directory and a string then searches for it on all the files for a REGEX match then output it into an output file. The project itself is managed using Maven in order to manage its dependencies and uses SLFJ4 Logging in order to keep track of errors. It runs by taking in its parameters as command arguments."
+    description: "Grep App: An application that allows for the use of the grep command in Linux by utilizing Java Files Objects along with Java Input and Output Stream. It takes in a file directory and a string then searches for it on all the files for a REGEX match then output it into an output file. The project itself is managed using Maven in order to manage its dependencies and uses SLFJ4 Logging in order to keep track of errors. It runs by taking in its parameters as command arguments."
 
 # List of personal or academic projects
 # Feel free to add more projects
@@ -81,6 +79,8 @@ professional_experience:
 education:
   - school_name: "University of Toronto"
     duration: "2020-2025"
+    awards_achievements:
+      - "3.4 GPA"
     degree: "Bachelor of Arts and Science, Computer Science Specialist"
     department: "Computer Science"
 
