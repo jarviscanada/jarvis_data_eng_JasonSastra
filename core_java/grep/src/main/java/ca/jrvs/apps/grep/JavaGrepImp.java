@@ -30,7 +30,6 @@ public class JavaGrepImp implements JavaGrep  {
         lineNum++;
       }
     }
-
     this.writeToFile(finalLines);
   }
 
