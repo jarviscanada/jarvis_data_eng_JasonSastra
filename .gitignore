@@ -7,3 +7,4 @@ target/
 *.iml
 .idea/
 .eclipse
+python_data_analytics/.*
