@@ -29,3 +29,4 @@ FROM (
 SELECT sum(unit_price * quantity) from retail
 
 -- Q8: Calculate total revenue by YYYYMM
+select DATE_TRUNC('month', invoice_date) AS year_month, sum(unit_price * quantity) from retail group by year_month order by year_month
