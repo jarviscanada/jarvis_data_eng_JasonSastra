@@ -19,6 +19,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JasonSastr
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JasonSastra/tree/master/core_java)]: Grep App: An application that allows for the use of the grep command in Linux by utilizing Java Files Objects along with Java Input and Output Stream. It takes in a file directory and a string then searches for it on all the files for a REGEX match then output it into an output file. The project itself is managed using Maven in order to manage its dependencies and uses SLFJ4 Logging in order to keep track of errors. It runs by taking in its parameters as command arguments.
 
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JasonSastra/tree/master/python_data_analytics)]: In this project, I worked with a dataset from London Gift Shop in order to clean, process, and analyze the dataset to provide meaningful analysis as an external Data Engineer. To do so, I created a detailed Jupyter Notebook filled with RFM Segmentation Analysis, User Analysis, and Sales Analysis using Python Pandas library for data manipulation. Presented the information in a clear and conside way utilizing various graphs to showcase possible improvements to sales strategy to optimize revenue.
+
 
 ## Highlighted Projects
 **Into The Dataswarm** [[GitHub](https://github.com/pokemonball34/tactical-x)]: Developed a tactical, turn-based game with a modifable enemy AI system that dynamically changes behavior to create engaging puzzle-solving challenges. Collaborated with a group of team until early launch on steam. •Built a modular level generator and flexible enemy patrol system, enabling seamless customization and scalability across multiple stages.
