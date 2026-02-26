@@ -104,7 +104,7 @@ public class PositionDaoIntTest {
 
     Position position = newPosition.get();
 
-    assertEquals(account.getId(), position.getAccount_id());
+    assertEquals(account.getId(), position.getAccountId());
     assertEquals("AAPL", position.getTicker());
     assertEquals(Integer.valueOf(50), position.getPosition());
   }

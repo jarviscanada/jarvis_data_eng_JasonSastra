@@ -116,8 +116,7 @@ public class MarketDataDao {
    * @return a HttpClient
    */
   private static HttpClient getHttpClient() {
-    HttpClient client = HttpClient.newHttpClient();
-    return client;
+    return HttpClient.newHttpClient();
   }
 
 }
