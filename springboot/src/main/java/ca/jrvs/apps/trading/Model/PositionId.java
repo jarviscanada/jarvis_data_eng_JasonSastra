@@ -5,23 +5,23 @@ import java.util.Objects;
 
 public class PositionId implements Serializable {
 
-  private Integer account_id;
+  private Integer accountId;
   private String ticker;
 
   public PositionId() {
   }
 
   public PositionId(Integer accountId, String ticker) {
-    this.account_id = accountId;
+    this.accountId = accountId;
     this.ticker = ticker;
   }
 
-  public Integer getAccount_id() {
-    return account_id;
+  public Integer getAccountId() {
+    return accountId;
   }
 
-  public void setAccount_id(Integer account_id) {
-    this.account_id = account_id;
+  public void setAccount_id(Integer accountId) {
+    this.accountId = accountId;
   }
 
   public String getTicker() {
@@ -36,12 +36,12 @@ public class PositionId implements Serializable {
   public boolean equals(Object o) {
     if (!(o instanceof PositionId)) return false;
     PositionId that = (PositionId) o;
-    return Objects.equals(account_id, that.account_id) &&
+    return Objects.equals(accountId, that.accountId) &&
         Objects.equals(ticker, that.ticker);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account_id, ticker);
+    return Objects.hash(accountId, ticker);
   }
 }

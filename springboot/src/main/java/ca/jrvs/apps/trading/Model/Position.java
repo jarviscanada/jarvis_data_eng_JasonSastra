@@ -13,7 +13,7 @@ public class Position {
 
   @Id
   @Column(name="account_id")
-  private Integer account_id;
+  private Integer accountId;
 
   @Id
   @Column(name="ticker")
@@ -24,8 +24,8 @@ public class Position {
 
   public Position() {}
 
-  public Integer getAccount_id() {
-    return account_id;
+  public Integer getAccountId() {
+    return accountId;
   }
 
   public String getTicker() {
