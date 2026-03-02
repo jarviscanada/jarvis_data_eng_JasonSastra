@@ -49,13 +49,11 @@ jarvis_projects:
   - name: "Python Data Analytics"
     git_url: "/python_data_analytics"
     description: "In this project, I worked with a dataset from London Gift Shop in order to clean, process, and analyze the dataset to provide meaningful analysis as an external Data Engineer. To do so, I created a detailed Jupyter Notebook filled with RFM Segmentation Analysis, User Analysis, and Sales Analysis using Python Pandas library for data manipulation. Presented the information in a clear and conside way utilizing various graphs to showcase possible improvements to sales strategy to optimize revenue."
-  - name: "Springboot Trading Apps"
-    git_url: "/springboot"
-    description: "In this project, I built an MVP trading application using Java and Spring Boot that is capable of retrieving real-time market quotes, process market orders, and manage trader accounts. The application follows a layered architecture consisting of controller, service, and data access layers, with Apache Tomcat handling HTTP requests and PostgreSQL serving as the database. Market data is integrated through external APIs (Finnhub and Finnage), and all endpoints are documented and testable via Swagger. I implemented RESTful controllers for quotes, traders, orders, and dashboard views, enabling account creation, deposits and withdrawals, order execution, and portfolio tracking. The system was fully containerized using Docker, with separate images for the Spring Boot application and the PostgreSQL database connected through a custom Docker network. Additionally, I wrote JUnit integration tests with a dedicated test database configuration, achieving approximately 70% test coverage."
+
 # List of personal or academic projects
 # Feel free to add more projects
 highlighted_projects:
-  #project name
+    #project name
   - name: "Into The Dataswarm"
     #URL is optional
     git_url: "https://github.com/pokemonball34/tactical-x"
