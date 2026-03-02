@@ -30,12 +30,16 @@ public class AccountDaoIntTest {
   @Autowired
   private TraderDao traderDao;
 
+  @Autowired
+  private  SecurityOrderDao securityOrderDao;
+
   private Account account;
   private Trader trader;
 
   @Before
   public void init() {
 
+    securityOrderDao.deleteAll();
     dao.deleteAll();
     traderDao.deleteAll();
 

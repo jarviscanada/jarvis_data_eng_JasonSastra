@@ -30,6 +30,7 @@ public class QuoteDaoIntTest {
     testQuote.setBidPrice(2.0);
     testQuote.setAskSize(5);
     testQuote.setBidSize(6);
+    quoteDao.save(testQuote);
   }
 
   @Test
