@@ -68,7 +68,7 @@ public class DashboardService {
    * @return
    * @throws IllegalArgumentException if traderId is not found
    */
-  private Account findAccountByTraderId(Integer traderId) {
+  public Account findAccountByTraderId(Integer traderId) {
     Account account = accountDao.getAccountByTraderId(traderId);
     if (account != null) {
       return account;

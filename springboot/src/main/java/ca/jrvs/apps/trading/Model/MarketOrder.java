@@ -6,6 +6,16 @@ public class MarketOrder {
   private int traderId;
   private Option option;
 
+  public MarketOrder(String ticker, int size, int traderId, Option option) {
+    this.ticker = ticker;
+    this.size = size;
+    this.traderId = traderId;
+    this.option = option;
+  }
+
+  public MarketOrder() {
+  }
+
   public enum Option {
     BUY,
     SELL

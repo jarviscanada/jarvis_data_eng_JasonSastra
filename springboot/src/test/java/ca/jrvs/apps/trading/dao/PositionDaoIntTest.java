@@ -1,7 +1,6 @@
-package ca.jrvs.apps.trading;
+package ca.jrvs.apps.trading.dao;
 
 import ca.jrvs.apps.trading.Model.*;
-import ca.jrvs.apps.trading.dao.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,11 +1,10 @@
-package ca.jrvs.apps.trading;
+package ca.jrvs.apps.trading.service;
 
 import ca.jrvs.apps.trading.Model.Account;
 import ca.jrvs.apps.trading.Model.Quote;
 import ca.jrvs.apps.trading.Model.SecurityOrder;
 import ca.jrvs.apps.trading.Model.Trader;
 import ca.jrvs.apps.trading.dao.*;
-import ca.jrvs.apps.trading.service.TraderService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

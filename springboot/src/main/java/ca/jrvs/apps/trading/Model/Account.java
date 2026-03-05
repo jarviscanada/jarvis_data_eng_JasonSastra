@@ -11,7 +11,20 @@ public class Account {
   @OneToOne(orphanRemoval = true)
   @JoinColumn(name = "trader_id", nullable = false)
   private Trader trader;
+
+  public Account(Trader trader, Double amount) {
+    this.trader = trader;
+    this.amount = amount;
+  }
+
+  public Account() {
+  }
+
   private Double amount;
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
   public Integer getId() {
     return id;

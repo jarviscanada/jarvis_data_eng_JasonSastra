@@ -15,7 +15,6 @@ import java.util.List;
 @RequestMapping("/quote")
 public class QuoteController {
 
-  private static final Logger log = LoggerFactory.getLogger(QuoteController.class);
   private QuoteService quoteService;
 
   @Autowired
@@ -32,7 +31,7 @@ public class QuoteController {
     return quote;
   }
 
-  @PutMapping(path = "/FinnAPI/")
+  @PutMapping(path = "/FinnAPI")
   @ResponseStatus(HttpStatus.OK)
   public void updateMarketData() throws Exception {
       quoteService.updateMarketData();
