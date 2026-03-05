@@ -9,11 +9,27 @@ public class Trader {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Integer id;
+
+  public Trader(String first_name, String last_name, LocalDate dob, String country, String email) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.dob = dob;
+    this.country = country;
+    this.email = email;
+  }
+
+  public Trader() {
+  }
+
   String first_name;
   String last_name;
   LocalDate dob;
   String country;
   String email;
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
   public Integer getId() {
     return id;

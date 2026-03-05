@@ -35,4 +35,16 @@ public class Position {
   public Integer getPosition() {
     return position;
   }
+
+  public void setAccountId(Integer accountId) {
+    this.accountId = accountId;
+  }
+
+  public void setTicker(String ticker) {
+    this.ticker = ticker;
+  }
+
+  public void setPosition(Integer position) {
+    this.position = position;
+  }
 }

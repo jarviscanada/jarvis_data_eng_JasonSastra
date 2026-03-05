@@ -1,6 +1,5 @@
-package ca.jrvs.apps.trading;
+package ca.jrvs.apps.trading.dao;
 
-import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.Model.Quote;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package ca.jrvs.apps.trading;
+package ca.jrvs.apps.trading.service;
 
 import ca.jrvs.apps.trading.Model.Quote;
 import ca.jrvs.apps.trading.dao.PositionDao;

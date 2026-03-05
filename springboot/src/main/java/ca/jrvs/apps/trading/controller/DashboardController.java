@@ -6,10 +6,7 @@ import ca.jrvs.apps.trading.service.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/dashboard")
@@ -22,14 +19,14 @@ public class DashboardController {
   @GetMapping("/profile/traderId/{traderId}")
   @ResponseStatus(HttpStatus.OK)
   @ResponseBody
-  public TraderAccountView getAccount(Integer traderId) {
+  public TraderAccountView getAccount(@PathVariable Integer traderId) {
     return dashboardService.getTraderAccount(traderId);
   }
 
   @GetMapping("/portfolio/traderId/{traderId}")
   @ResponseStatus(HttpStatus.OK)
   @ResponseBody
-  public PortfolioView getPortfolioView(Integer traderId) {
+  public PortfolioView getPortfolioView(@PathVariable Integer traderId) {
     return dashboardService.getProfileViewByTraderId(traderId);
   }
 }
