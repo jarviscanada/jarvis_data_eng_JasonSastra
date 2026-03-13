@@ -62,7 +62,7 @@ spec:
               value: jrvstrading
           ports:
             - containerPort: 5432
-              name: trading-app-psql
+              name: psql
           volumeMounts:
             - name: psql-persistent-storage
               mountPath: /var/lib/psql
