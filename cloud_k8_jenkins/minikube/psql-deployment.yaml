@@ -4,6 +4,7 @@ metadata:
   name: trading-app-psql
   labels:
     app: trading-psql
+    tier: psql
 spec:
   ports:
     - port: 5432
@@ -17,7 +18,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: psql-pv-claim
   labels:
-    app: trading-app-psql
+    app: trading-psql
+    tier: psql
 spec:
   accessModes:
     - ReadWriteOnce
@@ -30,23 +32,24 @@ kind: Deployment
 metadata:
   name: trading-app-psql
   labels:
-    app: psql
+    app: trading-psql
+    tier: psql
 spec:
   selector:
     matchLabels:
-      app: trading-app-psql
+      app: trading-psql
       tier: psql
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: trading-app-psql
+        app: trading-psql
         tier: psql
     spec:
       containers:
         - image: jason121301/trading-psql:latest
-          name: trading-app-paql
+          name: trading-app-psql
           env:
             - name: POSTGRES_PASSWORD
               valueFrom:
