@@ -42,7 +42,7 @@ spec:
             - name: PSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: trading-app
+                  name: trading-app-psql
                   key: password
             - name: PSQL_PORT
               value: "5432"
