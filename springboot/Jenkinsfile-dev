@@ -1,25 +1,14 @@
 pipeline {
     agent {
         kubernetes {
-            label 'maven-agent'
+            label 'all-in-one-agent'
             yaml """
 apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: maven
-    image: maven:3.9.4-eclipse-temurin-17
-    command:
-    - cat
-    tty: true
-  - name: docker
-    image: docker:24.0.5-dind
-    securityContext:
-      privileged: true
-    command:
-      - dockerd-entrypoint.sh
-  - name: kubectl
-    image: bitnami/kubectl:latest
+  - name: all-in-one
+    image: jason121301/jenkins-agent-all:latest
     command:
     - cat
     tty: true
@@ -45,7 +34,7 @@ spec:
 
         stage('Build Jar') {
             steps {
-                container('maven') {
+                container('all-in-one') {
 
                      sh 'cd springboot && mvn clean package -DskipTests'
 
@@ -55,7 +44,7 @@ spec:
 
         stage('Build Docker Image') {
             steps {
-                container('docker') {
+                container('all-in-one') {
                        sh "cd springboot && docker build -t $IMAGE_NAME:$IMAGE_TAG ."
 
                 }
@@ -64,7 +53,7 @@ spec:
 
         stage('Push Docker Image') {
             steps {
-                container('docker') {
+                container('all-in-one') {
                     withCredentials([usernamePassword(
                         credentialsId: 'dockerhub-creds',
                         usernameVariable: 'DOCKER_USER',
