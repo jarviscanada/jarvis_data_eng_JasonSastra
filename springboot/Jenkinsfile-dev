@@ -1,24 +1,31 @@
 pipeline {
     agent {
         kubernetes {
-            label 'all-in-one-agent'
+            label 'kaniko-agent'
             yaml """
 apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: all-in-one
-    image: jason121301/jenkins-agent-all:latest
+  - name: maven
+    image: maven:3.9.4-eclipse-temurin-17
+    command:
+    - cat
+    tty: true
+
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
     command:
     - cat
     tty: true
     volumeMounts:
-    - name: docker-sock
-      mountPath: /var/run/docker.sock
+    - name: kaniko-secret
+      mountPath: /kaniko/.docker
+
   volumes:
-  - name: docker-sock
-    hostPath:
-      path: /var/run/docker.sock
+  - name: kaniko-secret
+    secret:
+      secretName: dockerhub-secret
 """
         }
     }
@@ -26,9 +33,6 @@ spec:
     environment {
         IMAGE_NAME = "jason121301/trading-app"
         IMAGE_TAG = "${BUILD_NUMBER}"
-        KUBE_DEPLOYMENT = "trading-app"
-        KUBE_CONTAINER = "trading-app"
-        KUBE_NAMESPACE = "default"
     }
 
     stages {
@@ -41,45 +45,32 @@ spec:
 
         stage('Build Jar') {
             steps {
-                container('all-in-one') {
-
-                     sh 'cd springboot && mvn clean package -DskipTests'
-
+                container('maven') {
+                    sh 'cd springboot && mvn clean package -DskipTests'
                 }
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build & Push Image (Kaniko)') {
             steps {
-                container('all-in-one') {
-                       sh "cd springboot && docker build -t $IMAGE_NAME:$IMAGE_TAG ."
-
+                container('kaniko') {
+                    sh """
+                    /kaniko/executor \
+                      --dockerfile=springboot/Dockerfile \
+                      --context=dir://springboot \
+                      --destination=$IMAGE_NAME:$IMAGE_TAG \
+                      --destination=$IMAGE_NAME:latest
+                    """
                 }
             }
         }
 
-        stage('Push Docker Image') {
+        stage('Deploy to K8s') {
             steps {
-                container('all-in-one') {
-                    withCredentials([usernamePassword(
-                        credentialsId: 'dockerhub-creds',
-                        usernameVariable: 'DOCKER_USER',
-                        passwordVariable: 'DOCKER_PASS'
-                    )]) {
-                        sh """
-                        echo \$DOCKER_PASS | docker login -u \$DOCKER_USER --password-stdin
-                        docker push $IMAGE_NAME:$IMAGE_TAG
-                        """
-                    }
-                }
-            }
-        }
-        stage('Deploy to Dev K8s') {
-            steps {
-                container('kubectl') {
+                container('kaniko') {
                     sh """
                     kubectl set image deployment/trading-app \
-                      trading-app=\$IMAGE_NAME:\$IMAGE_TAG \
+                      trading-app=$IMAGE_NAME:$IMAGE_TAG \
                       -n default --record
 
                     kubectl rollout status deployment/trading-app -n default
@@ -87,7 +78,6 @@ spec:
                 }
             }
         }
-
     }
 
     post {
