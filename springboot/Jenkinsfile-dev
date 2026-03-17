@@ -78,7 +78,6 @@ spec:
                 }
             }
         }
-
         stage('Deploy to Dev K8s') {
             steps {
                 container('kubectl') {
@@ -86,6 +85,7 @@ spec:
                     kubectl set image deployment/$KUBE_DEPLOYMENT \
                       $KUBE_CONTAINER=$IMAGE_NAME:$IMAGE_TAG \
                       -n $KUBE_NAMESPACE
+                    kubectl rollout status deployment/$KUBE_DEPLOYMENT -n $KUBE_NAMESPACE
                     """
                 }
             }
