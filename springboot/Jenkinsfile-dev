@@ -12,13 +12,12 @@ spec:
     command:
     - cat
     tty: true
-  containers:
   - name: docker
-    image: docker:24.0.5
-    command:
-      - dockerd-entrypoint.sh
+    image: docker:24.0.5-dind
     securityContext:
       privileged: true
+    command:
+      - dockerd-entrypoint.sh
   - name: kubectl
     image: bitnami/kubectl:latest
     command:
