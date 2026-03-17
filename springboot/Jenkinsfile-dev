@@ -1,0 +1,68 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "jason121301/trading-app"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+        KUBE_DEPLOYMENT = "trading-app"
+        KUBE_CONTAINER = "trading-app"
+        KUBE_NAMESPACE = "default"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Jar') {
+            steps {
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh """
+                docker build -t $IMAGE_NAME:$IMAGE_TAG .
+                """
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh """
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    docker push $IMAGE_NAME:$IMAGE_TAG
+                    """
+                }
+            }
+        }
+
+        stage('Deploy to Dev K8s') {
+            steps {
+                sh """
+                kubectl set image deployment/$KUBE_DEPLOYMENT \
+                  $KUBE_CONTAINER=$IMAGE_NAME:$IMAGE_TAG \
+                  -n $KUBE_NAMESPACE
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Dev deployment successful"
+        }
+        failure {
+            echo "Dev deployment failed"
+        }
+    }
+}
