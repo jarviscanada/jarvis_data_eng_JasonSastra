@@ -8,7 +8,7 @@ kind: Pod
 spec:
   containers:
   - name: maven
-    image: maven:3.9.3-openjdk-17-slim
+    image: maven:3.9.4-eclipse-temurin-17
     command:
     - cat
     tty: true
@@ -18,7 +18,7 @@ spec:
     - cat
     tty: true
   - name: kubectl
-    image: bitnami/kubectl:1.27.6-debian-11-r0
+    image: bitnami/kubectl:latest
     command:
     - cat
     tty: true
