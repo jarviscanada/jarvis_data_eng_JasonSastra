@@ -84,9 +84,9 @@ spec:
             steps {
                 container('all-in-one') {
                     sh """
-                    kubectl set image deployment/trading-app \
-                      trading-app=\$IMAGE_NAME:\$IMAGE_TAG \
-                      -n default --record
+                    kubectl set image deployment/trading \
+                      trading=\$IMAGE_NAME:\$IMAGE_TAG \
+                      -n default
 
                     kubectl rollout status deployment/trading-app -n default
                     """
