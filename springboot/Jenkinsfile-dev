@@ -82,10 +82,11 @@ spec:
             steps {
                 container('kubectl') {
                     sh """
-                    kubectl set image deployment/$KUBE_DEPLOYMENT \
-                      $KUBE_CONTAINER=$IMAGE_NAME:$IMAGE_TAG \
-                      -n $KUBE_NAMESPACE
-                    kubectl rollout status deployment/$KUBE_DEPLOYMENT -n $KUBE_NAMESPACE
+                    kubectl set image deployment/trading-app \
+                      trading-app=\$IMAGE_NAME:\$IMAGE_TAG \
+                      -n default --record
+
+                    kubectl rollout status deployment/trading-app -n default
                     """
                 }
             }
