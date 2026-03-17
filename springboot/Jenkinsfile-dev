@@ -88,7 +88,7 @@ spec:
                       trading=\$IMAGE_NAME:\$IMAGE_TAG \
                       -n default
 
-                    kubectl rollout status deployment/trading-app -n default
+                    kubectl rollout status deployment/trading -n default
                     """
                 }
             }
