@@ -6,19 +6,14 @@ pipeline {
 apiVersion: v1
 kind: Pod
 spec:
-  containers:
-  - name: all-in-one
-    image: jason121301/jenkins-agent-all:latest
-    command:
-    - cat
-    tty: true
-    volumeMounts:
-    - name: docker-sock
-      mountPath: /var/run/docker.sock
-  volumes:
-  - name: docker-sock
-    hostPath:
-      path: /var/run/docker.sock
+    containers:
+    - name: all-in-one
+      image: jason121301/jenkins-agent-all:latest
+      command:
+      - dockerd-entrypoint.sh
+      securityContext:
+        privileged: true
+      tty: true
 """
         }
     }
