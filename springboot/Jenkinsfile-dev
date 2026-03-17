@@ -45,7 +45,9 @@ spec:
         stage('Build Jar') {
             steps {
                 container('maven') {
-                    sh 'mvn clean package -DskipTests'
+                    dir('springboot') {
+                        sh 'mvn clean package -DskipTests'
+                    }
                 }
             }
         }
@@ -53,7 +55,10 @@ spec:
         stage('Build Docker Image') {
             steps {
                 container('docker') {
-                    sh "docker build -t $IMAGE_NAME:$IMAGE_TAG ."
+                        dir('springboot') {
+                            sh "docker build -t $IMAGE_NAME:$IMAGE_TAG ."
+                        }
+                    }
                 }
             }
         }
