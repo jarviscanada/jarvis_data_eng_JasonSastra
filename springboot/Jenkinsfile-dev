@@ -82,7 +82,7 @@ spec:
         }
         stage('Deploy to Dev K8s') {
             steps {
-                container('kubectl') {
+                container('all-in-one') {
                     sh """
                     kubectl set image deployment/trading-app \
                       trading-app=\$IMAGE_NAME:\$IMAGE_TAG \
