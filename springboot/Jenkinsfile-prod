@@ -1,0 +1,107 @@
+pipeline {
+    agent {
+        kubernetes {
+            label 'all-in-one-agent'
+            yaml """
+apiVersion: v1
+kind: Pod
+spec:
+    containers:
+spec:
+  containers:
+  - name: all-in-one
+    image: jason121301/jenkins-agent-all:latest
+    command:
+    - cat
+    tty: true
+    env:
+    - name: DOCKER_HOST
+      value: tcp://localhost:2375
+
+  - name: dind
+    image: docker:24-dind
+    securityContext:
+      privileged: true
+    args:
+      - --host=tcp://0.0.0.0:2375
+      - --host=unix:///var/run/docker.sock
+"""
+        }
+    }
+
+    environment {
+        IMAGE_NAME = "jason121301/trading-app"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+        KUBE_DEPLOYMENT = "trading-app"
+        KUBE_CONTAINER = "trading-app"
+        KUBE_NAMESPACE = "default"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Jar') {
+            steps {
+                container('all-in-one') {
+
+                     sh 'cd springboot && mvn clean package -DskipTests'
+
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                container('dind') {
+                       sh "cd springboot && docker build -t $IMAGE_NAME:$IMAGE_TAG ."
+
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                container('dind') {
+                    withCredentials([usernamePassword(
+                        credentialsId: 'dockerhub-creds',
+                        usernameVariable: 'DOCKER_USER',
+                        passwordVariable: 'DOCKER_PASS'
+                    )]) {
+                        sh """
+                        echo \$DOCKER_PASS | docker login -u \$DOCKER_USER --password-stdin
+                        docker push $IMAGE_NAME:$IMAGE_TAG
+                        """
+                    }
+                }
+            }
+        }
+        stage('Deploy to Dev K8s') {
+            steps {
+                container('all-in-one') {
+                    sh """
+                    kubectl set image production/trading \
+                      trading=\$IMAGE_NAME:\$IMAGE_TAG \
+                      -n default
+
+                    kubectl rollout status production/trading -n default
+                    """
+                }
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo "Dev deployment successful"
+        }
+        failure {
+            echo "Dev deployment failed"
+        }
+    }
+}
