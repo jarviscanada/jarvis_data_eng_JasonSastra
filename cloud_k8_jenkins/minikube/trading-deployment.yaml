@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
         - image: jason121301/trading-app:latest
-          name: wordpress
+          name: trading
           env:
             - name: PSQL_HOST
               value: trading-psql
