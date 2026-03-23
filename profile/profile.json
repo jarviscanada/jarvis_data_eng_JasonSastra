@@ -40,9 +40,19 @@
       "name": "Python Data Analytics"
     },
     {
+      "description": "In this project, I built a scalable data processing pipeline using Azure Databricks and PySpark to analyze large-scale financial and stock datasets, leveraging a medallion architecture (Bronze, Silver, Gold) with data stored across Azure SQL Database and Delta Lake, and integrating external APIs to generate insights visualized through Databricks dashboards. The resulting dashboard alongside the notebooks used to generate these results are additionally stored in the GitHub repository.",
+      "git_url": "/spark",
+      "name": "Databricks and Spark"
+    },
+    {
       "description": "In this project, I built an MVP trading application using Java and Spring Boot that is capable of retrieving real-time market quotes, process market orders, and manage trader accounts. The application follows a layered architecture consisting of controller, service, and data access layers, with Apache Tomcat handling HTTP requests and PostgreSQL serving as the database. Market data is integrated through external APIs (Finnhub and Finnage), and all endpoints are documented and testable via Swagger. I implemented RESTful controllers for quotes, traders, orders, and dashboard views, enabling account creation, deposits and withdrawals, order execution, and portfolio tracking. The system was fully containerized using Docker, with separate images for the Spring Boot application and the PostgreSQL database connected through a custom Docker network. Additionally, I wrote JUnit integration tests with a dedicated test database configuration, achieving approximately 70% test coverage.",
       "git_url": "/springboot",
       "name": "Springboot Trading Apps"
+    },
+    {
+      "description": "In this project, I designed and deployed a cloud-native CI/CD pipeline using Jenkins, Docker, and Kubernetes, emphasizing application deployment across local Minikube, Azure Kubernetes Service (AKS), and a test environment on Azure VM, while automating build, containerization, and rollout processes with environment-specific pipelines and container images managed through Dockerhub. It culminated in two main environments, a local Minikube deployment which is utilized for testing and a production version in AKS.",
+      "git_url": "/cloud_k8_jenkins",
+      "name": "Cloud, Kubernetes and Jenkins"
     }
   ],
   "name": "Jason Sastra",
@@ -76,14 +86,17 @@
       "IntelliJ",
       "Pandas",
       "Numpy",
-      "Node.js"
+      "Node.js",
+      "Springboot",
+      "Kubernetes",
+      "Amazon Web Services"
     ],
     "familiar": [
       "Assembly",
       "JavaFx",
-      "Kubernetes",
       "DBeaver",
-      "QA"
+      "QA",
+      "Bash"
     ],
     "proficient": [
       "Java",
@@ -94,7 +107,8 @@
       "Agile/Scrum",
       "Git",
       "React.js",
-      "Power BI"
+      "Power BI",
+      "Azure Web Services"
     ]
   },
   "summary": "I'm a graduate from the University of Toronto with a strong foundation in full-stack development, game programming, and data analysis. With experience across public and private sectors, and a portfolio of both technical and creative work, I’m eager to bring my skills and adaptability to a dynamic software or game development team."
