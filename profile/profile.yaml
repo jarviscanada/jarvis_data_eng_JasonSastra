@@ -101,7 +101,6 @@ education:
 
 #Optional section
 others:
-  - title: "Activities/Hobbies"
+  - title: "Cetifications"
     bullets:
-      - "Basketball player"
-      - "Competitive gaming"
+      - "Databricks Certified Data Engineer Associate (https://credentials.databricks.com/83fe50dd-de66-45fb-a2b4-07e54b4d6d36#acc.QdfT3isx)"
